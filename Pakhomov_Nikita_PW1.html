@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web design - Practical Work 01</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        section {
+            background-color: #fff; /* Each section with a different background color */
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HTML Page Layouts - Project Work 1</h1>
+    <p>Student: Pakhomov Nikita</p>
+    <p>Work Description: Creating an HTML document with semantic markup</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#html5_standard">HTML5 Standard and Its Development</a></li>
+        <li><a href="#difference_w3c_whatwg">Difference Between W3C HTML5 and WHATWG HTML Living Standard</a></li>
+        <li><a href="#minimal_html_page">Minimal HTML Page Code</a></li>
+        <li><a href="#semantic_presentational_markup">Semantic vs. Presentational Markup</a></li>
+        <li><a href="#browser_support">Checking Browser Support for Tags/Attributes</a></li>
+        <li><a href="#supported_formats">Officially Supported Audio and Video Formats</a></li>
+    </ul>
+</nav>
+
+<main>
+        <section>
+            <h2>HTML5 Standard and Its Development</h2>
+            <dl>
+                <dt id="html5_standard">When did HTML5 become a W3C Recommendation?</dt>
+                <dd>HTML5 became a W3C Recommendation on 28 October 2014.</dd>
+                
+                <dt id="html5_reasons">What were the main reasons for developing HTML5?</dt>
+                <dd>
+                    <ul>
+                        <li>Modernize the Web: HTML5 aimed to address the limitations of previous versions (like HTML 4) and provide a more robust, feature-rich platform for web development.</li>
+                        <li>Support Rich Media: With native support for audio, video, and canvas elements, HTML5 made it easier to create interactive and multimedia-rich web applications.</li>
+                        <li>Enhance Semantics: HTML5 introduced new semantic elements (such as &lt;header&gt;, &lt;nav&gt;, and &lt;article&gt;) to improve the structure and meaning of web content.</li>
+                        <li>Improve Accessibility: HTML5 emphasized accessibility features, making it easier for assistive technologies to interpret web pages.</li>
+                        <li>Standardize APIs: HTML5 standardized various APIs (like geolocation, local storage, and web workers) to enhance web application capabilities.</li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+    
+        <section>
+            <h2>Difference Between W3C HTML5 and WHATWG HTML Living Standard</h2>
+            <dl>
+                <dt id="difference_w3c_whatwg">What are the key differences between W3C HTML5 and WHATWG HTML Living Standard?</dt>
+                <dd>
+                    <ul>
+                        <li><strong>Main Element Usage:</strong> W3C restricts the use of the &lt;main&gt; element to one visible instance per document, while WHATWG allows multiple &lt;main&gt; elements in a document.</li>
+                        <li><strong>Semantic Elements:</strong> W3C provides detailed information on how screen readers interpret semantics for elements like &lt;header&gt;, &lt;footer&gt;, &lt;section&gt;, &lt;aside&gt;, and &lt;article&gt;, whereas WHATWG encourages user agents to provide keyboard navigation for these semantic elements.</li>
+                        <li><strong>Main Content Definition:</strong> W3C defines &lt;main&gt; as representing the main content of a document, whereas WHATWG defines &lt;body&gt; as representing the content of the document.</li>
+                        <li><strong>Title Attribute Usage:</strong> W3C discourages the use of the title attribute for image captions, while WHATWG promotes &lt;figcaption&gt; for image captions.</li>
+                        <li><strong>Other Differences:</strong> Varying recommendations related to list markup in &lt;nav&gt;, use of headings, and more.</li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+        <section>
+            <h2>Minimal HTML Page Code</h2>
+            <dl>
+                <dt id="minimal_html_page">What does a minimal HTML page consist of?</dt>
+                <dd>
+                    A minimal HTML page consists of:
+                    <ul>
+                        <li>HTML declaration: &lt;!DOCTYPE html&gt;</li>
+                        <li>HTML root element: &lt;html&gt;</li>
+                        <li>Head section: &lt;head&gt;</li>
+                        <li>Title: &lt;title&gt;</li>
+                        <li>Body section: &lt;body&gt;</li>
+                        <li>Main content: e.g., &lt;h1&gt;Hello, World!&lt;/h1&gt;</li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+    
+        <section>
+            <h2>Semantic vs. Presentational Markup</h2>
+            <dl>
+                <dt id="semantic_presentational_markup">What are the differences between semantic and presentational markup?</dt>
+                <dd>
+                    <strong>Semantic Markup:</strong>
+                    <ul>
+                        <li>Focuses on the meaning and structure of content.</li>
+                        <li>Uses elements like &lt;article&gt;, &lt;section&gt;, and &lt;nav&gt; to convey context.</li>
+                        <li>Enhances accessibility and SEO.</li>
+                    </ul>
+                    <strong>Presentational Markup:</strong>
+                    <ul>
+                        <li>Focuses on appearance (e.g., styling with &lt;font&gt; or &lt;b&gt; tags).</li>
+                        <li>Deprecated because:</li>
+                        <li>It mixes content and presentation, making maintenance difficult.</li>
+                        <li>CSS now handles styling, separating content from design.</li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+    
+        <section>
+            <h2>Checking Browser Support for Tags/Attributes</h2>
+            <dl>
+                <dt id="browser_support">How can you check browser support for tags/attributes?</dt>
+                <dd>
+                    Use online resources like MDN Web Docs or Can I Use to check compatibility.
+                    <br>Example: To check &lt;video&gt; support, visit Can I Use video.
+                </dd>
+            </dl>
+        </section>
+    
+        <section>
+            <h2>Officially Supported Audio and Video Formats</h2>
+            <dl>
+                <dt id="supported_formats">What are the officially supported audio and video formats?</dt>
+                <dd>
+                    <strong>Audio:</strong> Supported formats include MP3, AAC, and Vorbis (Ogg).
+                    <br><strong>Video:</strong> Supported formats include MP4, WebM, and Ogg Theora.
+                    <br>If you use an unsupported format, the browser may not play the media or require additional plugins/extensions.
+                </dd>
+            </dl>
+        </section>
+        <section>
+            <h2>Sample Video</h2>
+            <video width="640" height="360" controls>
+                <source src="sample_video.mp4" type="video/mp4">
+                <source src="sample_video.webm" type="video/webm">
+                <source src="sample_video.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+    
+        <section>
+            <h2>Sample Audio</h2>
+            <audio controls>
+                <source src="sample_audio.mp3" type="audio/mpeg">
+                <source src="sample_audio.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+</main>
+
+<footer>
+    <div>
+        <img src="https://aerohelp.com/sites/default/files/styles/100x240/public/partner/sb_bsu_2018_logo.png?itok=FOPIUFSd" alt="SB BSU Logo" width="100">
+    </div>
+    <p>Feedback: Overall, the HTML page layout looks well-structured and organized. The use of semantic markup tags improves the readability and accessibility of the content. The inclusion of navigation links enhances user experience and makes it easy to navigate through the page.</p>
+    <p>However, it would be beneficial to provide more detailed descriptions for each question in the main section, especially for those without answers. This would improve clarity and provide better context for the reader.</p>
+    <p>The most challenging part of this task was integrating multiple media elements, such as videos and audio tracks, with compatibility considerations. Understanding how to use multiple sources for compatibility across different browsers was a valuable learning experience.</p>
+    <p>Overall, this exercise helped reinforce the importance of semantic markup, accessibility, and compatibility considerations in web development.</p>
+</footer>
+
+</body>
+</html>
