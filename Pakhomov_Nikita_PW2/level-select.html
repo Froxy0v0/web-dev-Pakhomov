@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Select</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; 
+        }
+        .level-card {
+            width: 90%; 
+            height: 80vh; 
+            background-image: url('https://i.yapx.ru/Xawu1.jpg');
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tooltip {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .level-card:hover .tooltip {
+            display: block;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose a Level</h1>
+    <div class="level-card" onclick="location.href='level1.html';">
+        <div class="tooltip">Level 1</div>
+    </div>
+</body>
+</html>
