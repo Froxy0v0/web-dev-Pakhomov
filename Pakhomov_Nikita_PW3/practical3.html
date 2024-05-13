@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 3 Report</title>
+    <style>
+        /* Borders */
+        .solid-border {
+            border: 2px solid black;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .dashed-border {
+            border: 2px dashed black;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .double-border {
+            border: 4px double black;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .groove-border {
+            border: 4px groove black;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Float image */
+        img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        /* Clearfix */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Background styles */
+        .hex-color {
+            background-color: #ffcc00; /* Hex color code */
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .color-name {
+            background-color: cornflowerblue; /* Color name */
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .rgba-function {
+            background-color: rgba(255, 0, 0, 0.5); /* RGBA function */
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .gradient-background {
+            background-image: linear-gradient(to right, #ff9966, #ff5e62); /* Gradient background */
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .gradient-repeating-background {
+            background-image: repeating-linear-gradient(-45deg, #ffffff, #ffffff 10px, #ffcc00 10px, #ffcc00 20px); /* Repeating gradient background */
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-background {
+            background-image: url('https://sotni.ru/wp-content/uploads/2023/08/medovyi-zakat-2.webp'); /* Image background */
+            background-size: cover;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .multiple-image-background {
+            background-image: url('https://i.pinimg.com/736x/00/92/3e/00923e77c97f7751c8bb069a6267dcb3.jpg'), url('https://www.redhairtravel.com/wp-content/uploads/2022/06/2.jpg.webp'); /* Multiple image background */
+            background-size: cover;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <article class="solid-border">
+        <h1>Practical 3 Report</h1>
+        
+        <section class="dashed-border">
+            <h2>Opening Developer Console</h2>
+            <p>To open the developer console in Mozilla Firefox, you can press <strong>Ctrl + Shift + K</strong> (or <strong>Cmd + Option + K</strong> on macOS). In Safari, you can open the developer console by pressing <strong>Option + Command + C</strong>.</p>
+        </section>
+
+        <section class="double-border">
+            <h2>Choosing Link Types</h2>
+            <p>Generally, the preferable way of including internal links into an HTML page is by using <strong>relative links</strong>. Relative links are advantageous as they make the website more portable and easier to maintain. However, <strong>absolute links</strong> are useful in certain situations, such as when linking to resources on external domains or when the structure of the website might change.</p>
+            <p>Use cases for choosing absolute links include linking to resources hosted on different servers or domains, ensuring the link always points to the correct location regardless of the page's location. Relative links are ideal for links within the same website or domain, simplifying management and allowing for more flexible site restructuring.</p>
+        </section>
+
+        <section class="groove-border">
+            <h2>Image Formats in Web Development</h2>
+            <p>Three common image formats used in web development are <strong>JPG</strong>, <strong>GIF</strong>, and <strong>PNG</strong>.</p>
+            <ul>
+                <li><strong>JPG (or JPEG)</strong>: This format is best suited for photographs or images with complex color variations. It uses lossy compression, meaning some quality is sacrificed to reduce file size.</li>
+                <li><strong>GIF (Graphics Interchange Format)</strong>: GIFs are commonly used for animated images and graphics with limited colors. They support transparency and animation but are not ideal for complex images due to limited color depth.</li>
+                <li><strong>PNG (Portable Network Graphics)</strong>: PNG is a versatile format suitable for various types of images, including graphics and photographs. It supports transparency and lossless compression, making it ideal for web use.</li>
+            </ul>
+            <p><strong>WEBP</strong> is an image format developed by Google that offers both lossy and lossless compression. It provides superior image quality and smaller file sizes compared to JPG and PNG.</p>
+            <p><strong>SVG (Scalable Vector Graphics)</strong> is a vector image format that uses XML-based markup. SVG images are resolution-independent and can be scaled without losing quality. They are ideal for graphics like icons, logos, and illustrations.</p>
+        </section>
+
+        <section class="gradient-background">
+            <h2>Lorem Ipsum</h2>
+            <p class="hex-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="color-name">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p class="rgba-function">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p class="gradient-repeating-background">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="image-background">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="multiple-image-background">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </section>
+
+        <section class="clearfix">
+            <h2>Screenshot</h2>
+            <p>Below is a screenshot:</p>
+            <img src="https://i.yapx.ru/XaziJ.bmp" alt="Screenshot of the webpage">
+        </section>
+
+    </article>
+</main>
+
+</body>
+</html>
