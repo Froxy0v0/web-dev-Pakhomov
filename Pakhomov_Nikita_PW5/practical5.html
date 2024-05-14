@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 5</title>
+  <style>
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    header nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; 
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer {
+      background-color: #f0f0f0;
+      padding: 20px 0;
+      text-align: center;
+    }
+    @media only screen and (max-width: 600px) {
+      header nav a {
+        margin: 5px;
+      }
+    }
+
+    img {
+      float: right;
+      max-width: 400px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HTML Practical 5</h1>
+    <nav>
+      <a href="#box_model">Box Model</a>
+      <a href="#clearfix">Clearfix Hack</a>
+      <a href="#margin_collapse">Margin Collapse</a>
+      <a href="#holy_grail_problem">Holy Grail Problem</a>
+      <a href="#holy_grail_solution">Holy Grail Solution</a>
+    </nav>
+  </header>
+
+  <main>
+    <article id="box_model">
+      <h2>a. What is a box model in CSS. Give box-sizing property definition</h2>
+      <p>The box model in CSS is a fundamental concept that describes how elements on a web page are rendered as rectangular boxes. Each box consists of four main parts: <em>content</em>, <em>padding</em>, <em>border</em>, and <em>margin</em>.</p>
+      <p>The <strong>box-sizing</strong> property defines how the total width and height of an element are calculated. It can have two values:</p>
+      <ul>
+        <li><strong>content-box:</strong> The width and height of the content area are calculated excluding padding and border.</li>
+        <li><strong>border-box:</strong> The width and height of the element include padding and border, but not margin.</li>
+      </ul>
+      <img src="https://miro.medium.com/v2/resize:fit:1358/1*nmdxvJbL2GI5NQSXCLOskA.png" alt="Box Model">
+    </article>
+
+    <article id="clearfix">
+      <h2>b. What is a “clearfix hack” and when does it need to be applied</h2>
+      <p>The "clearfix hack" is a technique used to contain floated elements within a parent element. It's commonly used when a parent element contains floated child elements and doesn't automatically expand to encompass them.</p>
+      <p>Applying the clearfix hack ensures that the parent element's height includes the floated children, preventing layout issues such as collapsing margins or overflow.</p>
+      <img src="https://www.tutorialspoint.com/css/images/clearfix.png" alt="Clearfix Hack Example">
+    </article>
+
+    <article id="margin_collapse">
+      <h2>c. What is a “margin collapse” and what are the use cases for margin: auto and negative margin values</h2>
+      <p>Margin collapse occurs when the vertical margins of two adjacent elements collapse into a single margin. This typically happens when there is no content, padding, or border separating the margins, and the margins are in the same direction.</p>
+      <p>The <strong>margin: auto;</strong> property is commonly used to horizontally center block-level elements within their parent container. It distributes the available space evenly on the left and right sides of the element, resulting in centering.</p>
+      <p>Negative margin values are used to create various layout effects, such as overlapping elements, adjusting spacing between elements, or pulling elements out of their normal flow. However, they should be used with caution as they can lead to unexpected layout issues if not applied carefully.</p>
+      <img src="https://ishadeed.com/assets/auto-css/width-auto.png" alt="Margin Auto Example">
+    </article>
+
+    <article id="holy_grail_problem">
+      <h2>d. What was the problem with achieving Holy Grail layout</h2>
+      <p>The main problem with achieving the Holy Grail layout was creating a layout with a header, footer, and three columns of content, where the center column was the tallest and would expand to fill the available vertical space.</p>
+      <p>This was challenging because traditional methods of layout using floats or positioning often resulted in complex and fragile CSS.</p>
+      <img src="https://luomingzhang.com/static/2fa265dedb862f41d6c6baa829cc350a/39600/Holy-Grail-Layout.png" alt="Holy Grail Layout Problem">
+    </article>
+
+    <article id="holy_grail_solution">
+      <h2>e. What are the modern ways to achieve Holy Grail layout</h2>
+      <p>Modern ways to achieve the Holy Grail layout include using CSS Grid or Flexbox. CSS Grid provides a powerful two-dimensional grid layout system that allows for precise control over column and row placement, making it well-suited for complex layouts like the Holy Grail.</p>
+      <p>Flexbox, on the other hand, is a one-dimensional layout model that excels at aligning and distributing items within a container along a single axis.</p>
+      <p>Both CSS Grid and Flexbox offer more straightforward and maintainable solutions compared to older techniques like floats and positioning.</p>
+      <img src="https://cdn.matthewjamestaylor.com/titles/holy-grail-3-column-responsive-layout-diagram.png" alt="Holy Grail Layout Solution">
+    </article>
+
+    <h2><strong>Feedback:</strong></h2>
+    <p>Please find attached the HTML file for Practical 5, which includes the answers to the questions related to the Holy Grail layout in web design.</p>
+    <ul>
+      <li><strong>Clarity:</strong> The instructions were clear and easy to follow.</li>
+      <li><strong>Most Difficult Part:</strong> Ensuring the images floated correctly to the right without disrupting the layout.</li>
+      <li><strong>Learnings:</strong> Gained a deeper understanding of CSS box model, clearfix hack, margin collapse, and modern layout techniques like Flexbox and Grid.</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>Created by: Pakhomov Nikita </p>
+    <p>Course: IRM</p>
+    <p>Date: 5/13/2024</p>
+    <p>Day: Monday</p>
+    <p>Place: Belitsk, Gomel region</p>
+  </footer>
+</body>
+</html>
