@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Form with Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        /* Optional styling for the form */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+        }
+        button[type="reset"] {
+            background-color: #f44336;
+        }
+        output {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .owl-carousel .item {
+            text-align: center;
+            padding: 30px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 3px;
+        }
+        .owl-nav button {
+            color: #FFF;
+            background: #333;
+            padding: 5px 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 3px;
+        }
+        .owl-dots .owl-dot span {
+            display: none;
+        }
+        .owl-dots .owl-dot {
+            display: inline-block;
+            margin: 5px;
+            font-size: 12px;
+            background: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .owl-dots .owl-dot.active {
+            background: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <form id="calculatorForm">
+        <label for="num1">Enter the first number:</label>
+        <input type="number" id="num1" name="num1" value="0">
+
+        <label for="operator">Select an operator:</label>
+        <select id="operator" name="operator">
+            <option value="+">Addition (+)</option>
+            <option value="-">Subtraction (-)</option>
+            <option value="*">Multiplication (*)</option>
+            <option value="/">Division (/)</option>
+        </select>
+
+        <label for="num2">Enter the second number:</label>
+        <input type="number" id="num2" name="num2" value="0">
+
+        <button type="button" onclick="performCalculation()">Calculate</button>
+        <button type="reset">Reset</button>
+
+        <output id="result"></output>
+    </form>
+
+    <!-- Owl Carousel HTML structure -->
+    <div class="owl-carousel owl-theme">
+        <div class="item" data-dot="Explain “repaint” and “reflow”">
+            <h4>Explain “repaint” and “reflow” of the webpage</h4>
+            <p>Repaint occurs when changes are made to an element's skin that changes visibility, but do not affect its layout. Reflow (or layout) happens when changes are made that affect the layout of the document, causing the browser to re-calculate the positions and dimensions of elements.</p>
+        </div>
+        <div class="item" data-dot="JavaScript and Page Load">
+            <h4>How does JavaScript on the webpage affect the page load speed and performance?</h4>
+            <p>JavaScript can significantly impact page load speed and performance. Large or poorly optimized scripts can delay rendering, block the parser, and cause longer load times. Efficiently loading and executing JavaScript can improve overall performance and user experience.</p>
+        </div>
+        <div class="item" data-dot="Script Minification">
+            <h4>What is “minification” of the script? Why is it useful to minify your scripts?</h4>
+            <p>Minification is the process of removing all unnecessary characters from the source code without changing its functionality, such as whitespace, comments, and newline characters. It is useful because it reduces the file size, resulting in faster load times and better performance.</p>
+        </div>
+        <div class="item" data-dot="JavaScript Web Worker">
+            <h4>What is a JS Web Worker and when do we need it?</h4>
+            <p>A JavaScript Web Worker is a script that runs in the background, independently of other scripts, without affecting the performance of the page. They are needed when you have tasks that are computationally intensive or require significant time, allowing the main thread to remain responsive.</p>
+        </div>
+        <div class="item" data-dot="Sources">
+            <h4>Sources</h4>
+            <p>Here are the sources used for answering the questions:</p>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank">MDN Web Docs: DOM Introduction</a></li>
+                <li><a href="https://developers.google.com/web/fundamentals/performance/rendering" target="_blank">Google Developers: Rendering Performance</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                dotsData: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                }
+            });
+        });
+
+        // Function to perform calculations based on the operator provided
+        function calculate(num1, operator, num2) {
+            switch(operator) {
+                case '+':
+                    return num1 + num2;
+                case '-':
+                    return num1 - num2;
+                case '*':
+                    return num1 * num2;
+                case '/':
+                    // Check if dividing by zero, return error message if true
+                    if(num2 != 0) {
+                        return num1 / num2;
+                    } else {
+                        return "Error: Division by zero is not allowed.";
+                    }
+                default:
+                    return "Error: Invalid operator.";
+            }
+        }
+
+        // Function to handle the calculation and display the result
+        function performCalculation() {
+            // Retrieve values from form fields
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var operator = document.getElementById('operator').value;
+            var num2 = parseFloat(document.getElementById('num2').value);
+
+            // Calculate the result based on user input
+            var result = calculate(num1, operator, num2);
+
+            // Display result in the output element
+            document.getElementById('result').textContent = "The result is: " + result;
+        }
+    </script>
+</body>
+</html>
