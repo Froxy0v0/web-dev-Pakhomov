@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style> 
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.horizontal-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.horizontal-nav li {
+    margin-left: 1rem;
+}
+
+.horizontal-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.news {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.news-item {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    background-color: #222;
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+}
+
+.news-content {
+    padding: 0.5rem 0;
+}
+
+.meta-info {
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+.excerpt {
+    display: block;
+    color: white;
+}
+
+button {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF0000;
+}
+
+/* Tablet Breakpoint */
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .news {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 600px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .news {
+        grid-template-columns: 1fr;
+    }
+
+    .excerpt {
+        display: none;
+    }
+
+    .horizontal-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .horizontal-nav li {
+        margin: 0.5rem 0;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://images.launchbox-app.com/56226f8d-c2c2-4ce5-810e-da2f48cb8e61.png" alt="Logo" class="logo">
+            <span class="logo-text">Dead by Daylight</span>
+        </div>
+        <nav class="horizontal-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Typography</a></li>
+                <li><a href="#">Block Regions</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="https://i.yapx.ru/Xa9ry.png" alt="Hero Image">
+            <div class="hero-text">
+                <h1>THE UNKNOWN & SABLE WARD: A BEGINNER’S GUIDE TO ALL THINGS WICKED</h1>
+                <p>Dead by Daylight: All Things Wicked is here, bringing The Unknown and Sable Ward into The Fog.
+
+                    The Unknown boasts one of Dead by Daylight’s creepiest designs, with its unsettling proportions, grotesque features, and haunting backstory. If analog horror is your bag, you’ll want to learn more about the best ways to get started with this disturbing new Killer.</p>
+            </div>
+        </section>
+        <section class="news">
+            <div class="news-item">
+                <img src="https://i.yapx.ru/Xa9rq.png" alt="News 1">
+                <div class="news-content">
+                    <h2>News Headline 1</h2>
+                    <p class="meta-info">Posted on May 1, 2024</p>
+                    <p class="excerpt">This is a brief excerpt of the news content...</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="https://i.yapx.ru/Xa9rn.png" alt="News 2">
+                <div class="news-content">
+                    <h2>News Headline 2</h2>
+                    <p class="meta-info">Posted on May 1, 2024</p>
+                    <p class="excerpt">This is a brief excerpt of the news content...</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="https://i.yapx.ru/Xa9rr.png" alt="News 3">
+                <div class="news-content">
+                    <h2>News Headline 3</h2>
+                    <p class="meta-info">Posted on May 1, 2024</p>
+                    <p class="excerpt">This is a brief excerpt of the news content...</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="https://i.yapx.ru/Xa9rz.png" alt="News 4">
+                <div class="news-content">
+                    <h2>News Headline 4</h2>
+                    <p class="meta-info">Posted on May 1, 2024</p>
+                    <p class="excerpt">This is a brief excerpt of the news content...</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
